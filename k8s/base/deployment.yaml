@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: t5input-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: t5input-frontend
+  template:
+    metadata:
+      labels:
+        app: t5input-frontend
+    spec:
+      containers:
+      - name: t5input-frontend
+        image: <你的 docker image>
+        ports:
+        - containerPort: 80
